@@ -53,11 +53,11 @@ export class ListPage {
         {
           text: "Add Quote",
           handler: (data: MovieQuote) => {
-            console.log("TODO save: ", data);
             if(data.quote.length > 0 && data.movie.length > 0) {
               this.movieQuotesStream.push(data);
             } else {
               console.log("Invalid movie quote");
+              return false;
             }
           }
         },

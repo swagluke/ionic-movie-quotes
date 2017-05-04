@@ -21,7 +21,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let movieQuote of movieQuotesStream | async">
+    <button ion-item *ngFor="let movieQuote of movieQuotesStream | async |reverse">
       <h2>{{movieQuote.quote}}</h2>
       <p>{{movieQuote.movie}}</p>
     </button>
