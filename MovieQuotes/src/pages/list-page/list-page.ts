@@ -53,7 +53,7 @@ export class ListPage {
         {
           text: "Add Quote",
           handler: (data: MovieQuote) => {
-            if(data.quote.length > 0 && data.movie.length > 0) {
+            if (data.quote.length > 0 && data.movie.length > 0) {
               this.movieQuotesStream.push(data);
             } else {
               console.log("Invalid movie quote");
@@ -64,5 +64,9 @@ export class ListPage {
       ],
     });
     prompt.present();
+  }
+
+  removeQuote(quoteToRemove: MovieQuote): void {
+    this.movieQuotesStream.remove(quoteToRemove.$key);
   }
 }
