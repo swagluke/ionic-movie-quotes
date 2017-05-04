@@ -1,3 +1,17 @@
 page-quote-detail-page {
+    #detail-view {
+        background: #eee;
+        ion-card {
+            margin-top: 40px;
+        }
+    }
 
+    #movie-title {
+        color: #888;
+        text-align: right;
+        margin-top: 8px;
+        &:before {
+            content: '-';
+        }
+    }
 }

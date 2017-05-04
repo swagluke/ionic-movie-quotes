@@ -13,6 +13,11 @@
 </ion-header>
 
 
-<ion-content padding>
-This is the quote detail page.
+<ion-content id = "detail-view" padding>
+  <ion-card>
+    <ion-card-content>
+      <h2>{{movieQuote?.quote}}</h2>
+      <p id = "movie-title">{{movieQuote?.movie}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

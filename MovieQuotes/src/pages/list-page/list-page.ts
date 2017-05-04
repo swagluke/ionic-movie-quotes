@@ -1,3 +1,4 @@
+import { QuoteDetailPage } from './../quote-detail-page/quote-detail-page';
 import { AngularFireDatabaseModule, FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -26,10 +27,12 @@ export class ListPage {
     this.movieQuotesStream = this.afDatabase.list("/quotes");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListPage');
+  pushDetailView(movieQuoteToPush: MovieQuote) {
+    console.log("Push", movieQuoteToPush);
+    this.navCtrl.push(QuoteDetailPage, {
+      key: movieQuoteToPush.$key
+    });
   }
-
   addQuote(): void {
     const prompt = this.alertCtrl.create({
       title: "Add quote",
